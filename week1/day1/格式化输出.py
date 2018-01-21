@@ -31,9 +31,9 @@ else:
 print(''' 
 ----------- info of %s --------------
 Name is %s 
-Age is %s
+Age is %d
 Job is %s
-Salary is %d
+Salary is %.2f
 You will be retired in %d years!
 ---------------- end ---------------------
-''' % (name, name, age, job, salary, 65 - int(age)))
+''' % (name, name, int(age), job, salary, 65 - int(age)))
