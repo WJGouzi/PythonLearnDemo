@@ -24,13 +24,16 @@ name = input('name is ')
 age = input('age is ')
 job = input('job is ')
 salary = input('salary is ')
-
+if salary.isdigit():
+    salary = int(salary)
+else:
+    exit('salart must be A NUMBER!')
 print(''' 
 ----------- info of %s --------------
 Name is %s 
 Age is %s
 Job is %s
-Salary is %s
+Salary is %d
 You will be retired in %d years!
 ---------------- end ---------------------
 ''' % (name, name, age, job, salary, 65 - int(age)))
