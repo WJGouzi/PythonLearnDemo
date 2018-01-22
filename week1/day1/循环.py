@@ -23,3 +23,17 @@
                ┃┫┫     ┃┫┫
                ┗┻┛     ┗┻┛
 """
+
+# 有限循环
+for i in range(1, 100):
+    print('%d' % i if i % 2 == 1 else '')  # 三目运算符
+for i in range(1, 101, 2):    # 2为步长
+    print('num is %d' % i)
+
+# 无限循环
+counter = 0
+while True:
+    counter += 1
+    if counter > 2**25:
+        print(counter)
+        break

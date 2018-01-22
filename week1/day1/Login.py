@@ -23,7 +23,7 @@
                ┃┫┫     ┃┫┫
                ┗┻┛     ┗┻┛
 """
-
+############################### 递归 #######################################
 def login():
     _userName = 'wangjun'
     _passWord = '123'
@@ -37,9 +37,51 @@ def login():
 
 # login()
 
-#循环
-for i in range(1, 100):
-    print('%d' % i if i % 2 == 1 else '')  # 三目运算符
-for i in range(1, 101, 2):    # 2为步长
-    print('num is %d' % i)
+############################ 有限次循环(for) ##################################
+_userName = 'wangjun'
+_passWord = '123'
+# _isPassAuthentication = False
+# for i in range(3):
+#     userName = input('User name: ')
+#     passWord = input('Pass word: ')
+#     if userName == _userName and passWord == _passWord:
+#         print('welcome %s login' % userName)
+#         _isPassAuthentication = True
+#         break   # 跳出终端
+#     else:
+#         print('Invalid user name or password!')
+# if not _isPassAuthentication:
+#     print('您输入的次数过多')
 
+
+##### 另一种写法
+for i in range(3):   # 也就是相当于在for后面加了一个else语句
+    userName = input('User name: ')
+    passWord = input('Pass word: ')
+    if userName == _userName and passWord == _passWord:
+        print('welcome %s login' % userName)
+        break   # 跳出终端   break之后就不会执行最后的else语句
+    else:
+        print('Invalid user name or password!')
+else: # 只要for循环正常执行完毕，没有被打断就会执行else语句
+    print('您输入的次数过多')
+
+
+
+############################ 无限次循环(while) #################################
+def whileFunction():
+    count = 0
+    while count < 3:
+        _userName = 'wangjun'
+        _passWord = '123'
+        userName = input('User name: ')
+        passWord = input('Pass word: ')
+        if userName == _userName and passWord == _passWord:
+            print('welcome %s login' % userName)
+            break  # 跳出终端   break之后就不会执行最后的else语句
+        else:
+            print('Invalid user name or password!')
+        count += 1
+    else:  # 只要while循环正常执行完毕，没有被打断就会执行else语句
+        print('您输入的次数过多')
+whileFunction()
