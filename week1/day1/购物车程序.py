@@ -64,5 +64,3 @@ while salary > 0:
             break
         else:
             print('请输入正确的命令')
-# else:
-#     print(buyGoodsList)
