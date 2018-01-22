@@ -40,18 +40,18 @@ def login():
 ############################ 有限次循环(for) ##################################
 _userName = 'wangjun'
 _passWord = '123'
-# _isPassAuthentication = False
-# for i in range(3):
-#     userName = input('User name: ')
-#     passWord = input('Pass word: ')
-#     if userName == _userName and passWord == _passWord:
-#         print('welcome %s login' % userName)
-#         _isPassAuthentication = True
-#         break   # 跳出终端
-#     else:
-#         print('Invalid user name or password!')
-# if not _isPassAuthentication:
-#     print('您输入的次数过多')
+_isPassAuthentication = False
+for i in range(3):
+    userName = input('User name: ')
+    passWord = input('Pass word: ')
+    if userName == _userName and passWord == _passWord:
+        print('welcome %s login' % userName)
+        _isPassAuthentication = True
+        break   # 跳出终端
+    else:
+        print('Invalid user name or password!')
+if not _isPassAuthentication:
+    print('您输入的次数过多')
 
 
 ##### 另一种写法
@@ -82,6 +82,12 @@ def whileFunction():
         else:
             print('Invalid user name or password!')
         count += 1
+        # 每循环三次就判断一次要不要进行下次的输入
+        if count == 3:
+            keepGoingInput = input('继续输入or 完成 [y/n]:')
+            if keepGoingInput == 'y':
+                count = 0
+
     else:  # 只要while循环正常执行完毕，没有被打断就会执行else语句
         print('您输入的次数过多')
 whileFunction()
