@@ -38,16 +38,22 @@ buyGoodsPricerList = []
 while salary > 0:
     inputNum = input('>>>:')
     inputChar = inputNum.split(':')[-1]
+    print(type(inputChar))
     if inputChar.isdigit():
         index = int(inputChar)
-        price = goodsPriceList[index - 1]
-        if salary < price:
-            print('余额不足, %d' % (salary - price))
+
+        if index <= len(goodsList):
+            price = goodsPriceList[index - 1]
+
+            if salary < price:
+                print('余额不足, %d' % (salary - price))
+            else:
+                salary -= price
+                print('已加入%s到购物车,当前余额%d' % (goodsList[index - 1], salary))
+                buyGoodsList.append(goodsList[index -1])
+                buyGoodsPricerList.append(price)
         else:
-            salary -= price
-            print('已加入%s到购物车,当前余额%d' % (goodsList[index - 1], salary))
-            buyGoodsList.append(goodsList[index -1])
-            buyGoodsPricerList.append(price)
+            print('请输入正确的数字')
     else:
         if inputChar == 'quit':
             print('您以购买以下商品:')

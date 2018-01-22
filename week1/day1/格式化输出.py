@@ -28,7 +28,7 @@ if salary.isdigit():
     salary = int(salary)
 else:
     exit('salart must be A NUMBER!')
-    
+
 print(''' 
 ----------- info of %s --------------
 Name is %s 
