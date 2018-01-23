@@ -23,8 +23,7 @@
                ┃┫┫     ┃┫┫
                ┗┻┛     ┗┻┛
 """
-import sys
-import functools
+
 salary = input('salary = ')
 goodsList = ['iphone6s', 'mac book', 'coffee', 'python book', 'bicycle']
 goodsPriceList = [5800, 9000, 32, 80, 1500]
@@ -38,7 +37,6 @@ buyGoodsPricerList = []
 while salary > 0:
     inputNum = input('>>>:')
     inputChar = inputNum.split(':')[-1]
-    print(type(inputChar))
     if inputChar.isdigit():
         index = int(inputChar)
 
