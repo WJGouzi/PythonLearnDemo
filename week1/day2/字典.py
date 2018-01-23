@@ -58,7 +58,6 @@ print(age) # 27
 #  setdefault 方法会先在字典中去找相对应的key值，如果没有对应的key值就添加，如果找到了就不会做任何的处理， setdefault是有返回值的
 
 
-
 # 查
 # 查某一个键对应的值
 print('dic3 name is :',dic3['name']) # wangjun
@@ -89,5 +88,59 @@ print(dic4) # {'age': 27, 'name': 'wangjun', 'gender': 'female', 1: 'haha', 2: '
 #  dict1.update(dict2)方法，如果在dict2中没有dict1的键，那么dict2会直接添加到dict1中，并修改dict1的数据，但dict2中的数据是不会进行更改的。
 #  如果dict2中有dict1相同的键，那么dict1中的键值对会被dict2的键值对覆盖掉。
 
+# 删
+# 删除某个键值对
+del dic4[1]
+print(dic4)
+# 清空字典
+dic6.clear()
+print(dic6)
+# 删除指定的键值对，并返回一个值
+value1 = dic4.pop(2)
+print(value1)
+print(dic4)
+# 随机删除,并返回一个键值对，以元组进行展示
+value2 = dic4.popitem() # 一般不用
+print(value2)
+print(dic4)
 
 
+########################## 字典的其他操作 ################################
+
+# 创建字典的其他的方法（基本不用）
+dict1 = dict.fromkeys(['host1','host2', 'host3'], 'wangjun') # 将列表中的每一个元素当做键， 后面的那个数据为字典的值
+print(dict1) # {'host1': 'wangjun', 'host2': 'wangjun', 'host3': 'wangjun'}
+
+dict2 = dict.fromkeys(['host1','host2', 'host3'], ['wangjun', 'enen'])
+print(dict2) # {'host1': ['wangjun', 'enen'], 'host2': ['wangjun', 'enen'], 'host3': ['wangjun', 'enen']}
+dict2['host2'][1] = 'haha'
+print(dict2) # {'host1': ['wangjun', 'haha'], 'host2': ['wangjun', 'haha'], 'host3': ['wangjun', 'haha']}
+# 所以是基本不使用，这是由于深浅拷贝的问题
+
+
+# 字典的嵌套
+# 类似Json一样的
+
+
+# 排序
+print(sorted(dic1)) # ['age', 'goodAt', 'hobby', 'isHandsome', 'name']
+print(sorted(dic1.items())) # [('age', 27), ('goodAt', 'Python'), ('hobby', 'girl'), ('isHandsome', True), ('name', 'wangjun')]
+
+
+
+# 字典的遍历
+for key in dic1: # 默认遍历的是字典的键 # 推荐使用的方法
+    print('key value is : %s -- %s' % (key, dic1[key]))
+# key value is : name -- wangjun
+# key value is : age -- 27
+# key value is : hobby -- girl
+# key value is : isHandsome -- True
+# key value is : goodAt -- Python
+
+for key, value in dic1.items(): # 效率不高
+    print('key is : %s, value is %s' % (key, value))
+# key is : name, value is wangjun
+# key is : age, value is 27
+# key is : hobby, value is girl
+# key is : isHandsome, value is True
+# key is : goodAt, value is Python
