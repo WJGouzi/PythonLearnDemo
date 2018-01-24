@@ -58,10 +58,32 @@ file = open('洛神赋','r')
 # 读取所有行
 # print(file.readlines()) # ['寥落古行宫，宫花寂寞红。\n', '白头宫女在，闲坐说玄宗。\n', '白日依山尽，黄河入海流。\n', '欲穷千里目，更上一层楼。']
 
+# 需求  将第2行加入一个字符串
 num = 0
-for line in file.readlines():
-    num += 1
-    # print(line.strip())   # strip会把每个字符串的换行符进行删除
-    # 需求  将第2行加入一个字符串
-    print(line.strip() + 'i like it' if num == 2 else line.strip())
+# for line in file.readlines():
+#     num += 1
+#     # print(line.strip())   # strip会把每个字符串的换行符进行删除
+#     print(line.strip() + 'i like it' if num == 2 else line.strip())
+# file.close()
+
+####### 一般推荐使用的方法 **************************************************************
+# for line in file:  # 这是for内部将对象做成了一个迭代器，用一个去取一个。这里就是用一行就去取一行
+#     num += 1
+#     print(line.strip() + 'i like it' if num == 2 else line.strip())
+# file.close()
+
+###  遍历器进行遍历
+# for index, value in enumerate(file.readlines()):
+#     print('--'.join([str(index), ' '.join([value.strip(), 'i like it'])]) if index == 2 else '--'.join([str(index), value.strip()]))
+# file.close()
+
+
+### 光标位置的检测
+print(file.tell())    # 0
+print(file.read(5))   # 寥落古行宫  -->> 中文在UTF-8中占3个字符
+print(file.tell())    # 15
+### 调整光标位置
+print(file.seek(0))   # 0 -> 可以用于断点续传的功能
+print(file.read(7))   # 寥落古行宫，宫
+
 file.close()
