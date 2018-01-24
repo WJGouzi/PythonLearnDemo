@@ -85,5 +85,4 @@ print(file.tell())    # 15
 ### 调整光标位置
 print(file.seek(0))   # 0 -> 可以用于断点续传的功能
 print(file.read(7))   # 寥落古行宫，宫
-
 file.close()
