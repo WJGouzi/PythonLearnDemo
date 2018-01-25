@@ -67,16 +67,16 @@ while True:
         parentList.append(cityDict)
         cityDict = cityDict[choose]
     elif choose == 'quit':
-        cityDict = parentList.pop() if len(parentList) != 0 else citys
+        cityDict = parentList.pop() if len(parentList) != 0 else cityDict
         # break
     elif choose == 'add': # 增加的功能
         addCity = input('addCity>>>:').strip()
         cityDict[addCity] = {}
         addList.append(cityDict)
         cityFile.seek(0)
-        cityFile.write(str(addList[0]))
+        cityFile.write(str(parentList[0]) if len(parentList) != 0 else str(cityDict))
         cityFile.flush()
-        print(addList)
+        # print(addList)
     else:
         print('输入不正确')
 
