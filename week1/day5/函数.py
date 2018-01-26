@@ -72,3 +72,14 @@ func('wangjun', 26, 'boy', 12345,33, job = 'IT', hobbit = 'girls')
 # 参数位置的顺序：
 #   关键字参数 -> 默认参数 -> 可变参数
 
+
+count = 10
+def func():
+    global count
+    print('g',count)
+    count = 1
+    print(count)
+func()
+def func1():
+    return count
+print(func1())
