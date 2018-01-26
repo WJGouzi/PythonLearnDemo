@@ -24,7 +24,6 @@
                ┗┻┛     ┗┻┛
 """
 
-
 #  文件的处理中的with语句
 
 # file = open('洛神赋','r')
@@ -41,3 +40,10 @@ with open('../day3/洛神赋','r') as readfile, open('洛神赋', 'w') as wirtef
         wirtefile.write(line)
         # 将day3中的文件的所有内容写入到一个新的文件中去。
 
+
+import copy
+a = [[1, 2], 3, 4]
+b = a.deepcopy()
+b[0][0] = 5
+print(a)
+print(b)

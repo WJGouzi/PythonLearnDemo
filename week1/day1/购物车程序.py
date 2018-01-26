@@ -23,7 +23,7 @@
                ┃┫┫     ┃┫┫
                ┗┻┛     ┗┻┛
 """
-
+# 列表练习
 salary = input('salary = ')
 goodsList = ['iphone6s', 'mac book', 'coffee', 'python book', 'bicycle']
 goodsPriceList = [5800, 9000, 32, 80, 1500]
