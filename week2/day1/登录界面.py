@@ -26,13 +26,14 @@
 # 登录界面
 
 pages = ['home', 'finance', 'book']
-
+lastPage = ''
 def loginFunc(type):
     def login(func):
         def loginWithFile():
             f = open('JDUserFile' if type == 'jingdong' else 'WXUserFile', 'r')
             info = f.read()
             f.close()
+            print(info)
             infoDict = eval(info)
             isLogin = infoDict['islogin']
             if isLogin == False:
@@ -43,7 +44,7 @@ def loginFunc(type):
                     print('登录%s账户成功' % type)
                     f = open('JDUserFile' if type == 'jingdong' else 'WXUserFile', 'w')
                     f.seek(0)
-                    modifyDict = {'islogin' : True, 'info': {'userName': 'wangjun', 'passWord': '123'}}
+                    modifyDict = {'islogin' : True, 'info': {'userName': userName, 'passWord': passWord}}
                     f.write(str(modifyDict))
                     f.close()
                     func()
@@ -53,29 +54,68 @@ def loginFunc(type):
     return login
 
 
+# while True:
+#     for i in pages:
+#         print('page is %s' % i)
+#     choice = input('>>>:').strip()
+#     if choice in pages:
+#         if choice == 'home':
+#             @loginFunc('jingdong')
+#             def home():
+#                 print('this is home page')
+#             home()
+#         elif choice == 'finance':
+#             @loginFunc('weixin')
+#             def finance():
+#                 print('this is finance page')
+#             finance()
+#         else:
+#             @loginFunc('jingdong')
+#             def book():
+#                 print('this is book page')
+#             book()
+#     else:
+#         print('请输入正确的选项')
+
+
+@loginFunc('jingdong')
+def home():
+    print('this is home page')
+@loginFunc('weixin')
+def finance():
+    print('this is finance page')
+@loginFunc('jingdong')
+def book():
+    print('this is book page')
+
 while True:
     for i in pages:
         print('page is %s' % i)
     choice = input('>>>:').strip()
     if choice in pages:
         if choice == 'home':
-            @loginFunc('jingdong')
-            def home():
-                print('this is home page')
             home()
+            lastPage = 'home'
         elif choice == 'finance':
-            @loginFunc('weixin')
-            def finance():
-                print('this is finance page')
             finance()
-        else:
-            @loginFunc('jingdong')
-            def book():
-                print('this is book page')
+            lastPage = 'finance'
+        elif choice == 'book':
             book()
+            lastPage = 'book'
+        else:
+            print('请输入正确的选项')
+    elif choice == 'quit':
+        pass
+        # f = open('WXUserFile' or 'JDUserFile', 'r')
+        # info = f.read()
+        # f.close()
+        # infoDict = eval(info)
+        # userName = infoDict['info']['userName']
+        # passWord = infoDict['info']['passWord']
+        # f1 = open('WXUserFile' or 'JDUserFile', 'w')
+        # f1.seek(0)
+        # modifyDict = {'islogin': False, 'info': {'userName': userName, 'passWord': passWord}}
+        # f1.write(str(modifyDict))
+        # lastPage = ''
     else:
         print('请输入正确的选项')
-
-
-
-
