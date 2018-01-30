@@ -79,6 +79,4 @@ while True:
         # print(addList)
     else:
         print('输入不正确')
-
-
 cityFile.close()

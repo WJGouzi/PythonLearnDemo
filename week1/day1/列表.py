@@ -37,18 +37,18 @@ names = ['wangjun', 'hah', 'hhasda', 'enen', 'dasdasfsdf', 'avvv']
 print(names[0])
 # 取多个值
 # 增 切片
-print(names[1:3]) # ['hah', 'hhasda'] 从i个取，取到j-1
-print(names[1:]) # ['hah', 'hhasda', 'enen', 'dasdasfsdf', 'avvv'] 从第i个开始取，取到最后
-print(names[1: -1]) # ['hah', 'hhasda', 'enen', 'dasdasfsdf'] 从第i个开始取，取到最后一个之前
-print(names[1::2]) # ['hah', 'enen', 'avvv'] 从左到有去隔一个取
-print(names[::-2]) # -2 从右往左隔一个取。这个最后一个值是有方向性的。
+print(names[1:3])  # ['hah', 'hhasda'] 从i个取，取到j-1
+print(names[1:])  # ['hah', 'hhasda', 'enen', 'dasdasfsdf', 'avvv'] 从第i个开始取，取到最后
+print(names[1: -1])  # ['hah', 'hhasda', 'enen', 'dasdasfsdf'] 从第i个开始取，取到最后一个之前
+print(names[1::2])  # ['hah', 'enen', 'avvv'] 从左到有去隔一个取
+print(names[::-2])  # -2 从右往左隔一个取。这个最后一个值是有方向性的。
 
 # 添加
 # append / insert
-names.append('jun') # 默认是插到最后一个位置, 'append'这个方法 会 把names这个列表进行修改的
-print(names)
-names + ['haodeya'] # '+' 这个是 不会 把names这个列表的数据修改的
-print(names)
+names.append('jun')  # 默认是插到最后一个位置, 'append'这个方法 会 把names这个列表进行修改的
+print('append : ',names)  # append :  ['wangjun', 'hah', 'hhasda', 'enen', 'dasdasfsdf', 'avvv', 'jun']
+names + ['haodeya']  # '+' 这个是 不会 把names这个列表的数据修改的
+print('+ ',names)  # +  ['wangjun', 'hah', 'hhasda', 'enen', 'dasdasfsdf', 'avvv', 'jun']
 names.insert(3, 'enenenn') # 将数据插入到任意一个位置
 print(names)
 
