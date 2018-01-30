@@ -51,3 +51,9 @@ print(isinstance(l, Iterable))  # True 列表是可迭代
 print(isinstance(l, Iterator))  # False 列表不是迭代对象
 print(isinstance(a, Iterable))  # True 是否为可迭代
 print(isinstance(a, Iterator))  # True 是否为迭代对象
+
+
+
+# 找到文件中最长行
+print(max(len(line.strip()) for line in open('../../week1/day3/洛神赋1', 'r')))  # 22
+#  以上的文件操作，是将文件转成了迭代器，所以是可以迭代的。

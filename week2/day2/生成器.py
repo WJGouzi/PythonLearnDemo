@@ -58,3 +58,5 @@ b.send(122)      # 同样和next()一样可以进入到函数，但是可以给y
 
 #  流程：
 #  创建生成器 -> b.send(None) 进入到函数 -> print('ok1') -> yield 1返回 -> b.send(122) 传给yield1,也就是count=1 -> print('ok2') -> yield 2返回 -> 程序执行完毕，后续的不再进行。
+
+
