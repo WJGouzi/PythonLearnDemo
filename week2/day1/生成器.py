@@ -29,8 +29,8 @@ print(s)  # <generator object <genexpr> at 0x10401cf10>
 # print(next(s))  # StopIteration 超出的就报错了
 
 
-for i in s:  #  -> 就是在s中一直调用next()函数
-    print() # 0,1,2
+for i in s:       # -> 就是在s中一直调用next()函数
+    print(i)      # 0,1,2
 
 
 # 生成器本身就是一个可迭代对象
@@ -65,8 +65,6 @@ for i in foo():
     print(i)  # i= 1，2
     # 1
     # 2
-
-
 
 
 ##  斐波那契数列

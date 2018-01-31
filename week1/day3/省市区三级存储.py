@@ -57,7 +57,7 @@ cityFile.write(str(citys))
 cityFile.seek(0)
 cityDict = eval(cityFile.read())
 parentList = []
-addList = [] # 增加的添加在列表中。
+addList = []     # 增加的添加在列表中。
 while True:
     for key in cityDict:
         print(key)
@@ -69,7 +69,7 @@ while True:
     elif choose == 'quit':
         cityDict = parentList.pop() if len(parentList) != 0 else cityDict
         # break
-    elif choose == 'add': # 增加的功能
+    elif choose == 'add':   # 增加的功能
         addCity = input('addCity>>>:').strip()
         cityDict[addCity] = {}
         addList.append(cityDict)

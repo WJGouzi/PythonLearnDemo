@@ -30,19 +30,19 @@
 
 #  filter函数
 
-str = ['a', 'b', 'c', 'd']
+strL = ['a', 'b', 'c', 'd']
 def filterFunc(s):
     if s != 'a':
         return s
 
-ret = filter(filterFunc, str)  #  python2返回的是一个元组，在python3中返回的是一个迭代器。
+ret = filter(filterFunc, strL)  #  python2返回的是一个元组，在python3中返回的是一个迭代器。
 print(ret)  # <filter object at 0x104102438>
 print(list(ret))  # ['b', 'c', 'd']
 
 #  map函数
 def mapFunc(s):\
     return s + 'wangjujn'
-ret1 = map(mapFunc, str)
+ret1 = map(mapFunc, strL)
 print(ret1)  # <map object at 0x103856d68>
 print(list(ret1))  # ['awangjujn', 'bwangjujn', 'cwangjujn', 'dwangjujn']
 

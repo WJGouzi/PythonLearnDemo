@@ -26,7 +26,7 @@
 
 # 有限循环
 for i in range(1, 100):
-    print('%d' % i if i % 2 == 1 else '')  # 三目运算符
+    print('i is %d' % i if i % 2 == 1 else '')  # 三目运算符
 for i in range(1, 101, 2):    # 2为步长
     print('num is %d' % i)
 

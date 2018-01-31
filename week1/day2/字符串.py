@@ -27,20 +27,20 @@
 ## 字符串操作
 # 字符串切片
 a = 'hello world'
-print(a[1:]) # ello world
+print(a[1:])                  # ello world
 # 字符串片段的判断-> 关键字 in
-print('ello' in a) # True
+print('ello' in a)            # True
 
 # 字符串的品拼接
 b = 'i love u'
-c = a + b # 效率低
-print(c) # hello worldi love u
+c = a + b                     # 效率低
+print(c)                      # hello worldi love u
 
-d = ''.join([a, b]) # 比如地址的拼接的时候就会使用到这个方法
-print(d) # hello worldi love u
+d = ''.join([a, b])           # 比如地址的拼接的时候就会使用到这个方法
+print(d)                      # hello worldi love u
 
 e = '******'.join([a, b, d])
-print(e) # hello world******i love u******hello worldi love u
+print(e)                      # hello world******i love u******hello worldi love u
 # 将a,b,d这个三个字符串以 "*****" 进行连接
 
 ############################# 内置方法 ######################################

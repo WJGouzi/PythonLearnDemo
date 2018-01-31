@@ -27,14 +27,14 @@
 # 就是边写边存
 # import sys, time
 # for i in range(30):
-#     print('',end='*',flush=True)
+#     print('', end='*', flush=True)
 #     time.sleep(.1)
 
-# file = open('洛神赋1','a')
-# file.truncate(5) # 从光标处开始截断
-# file.write('asdasd')
-# print(file.fileno()) # 3 拿到文件的编号
-# print(file.isatty()) # 是否为终端 False
+# file = open('洛神赋1', 'a')
+# file.truncate(6)         # 从光标处开始截断
+# file.write('asdasd')     # 从截断处开始追然后将加文字  寥落asdasd
+# print(file.fileno())     # 3 拿到文件的编号
+# print(file.isatty())     # 是否为终端 False
 # file.close()
 
 
@@ -56,22 +56,23 @@
 
 ################# a+ ####################
 # file = open('洛神赋1','a+')
-# print(file.tell()) # 8
-# file.write('\nasda')
-# print(file.tell()) # 13
+# print(file.tell())           # 文件最后的一个字符的位置 12
+# file.write('\nasda')         # 将添加的文字放到最后去
+# print(file.tell())           # 17
 # print(file.readline())
 # file.close()
 
 ###########  修改硬盘中的内容(理论上是不能完成的) #############
 file = open('洛神赋', 'r+')
-file1 = open('洛神赋1', 'w') #
+file1 = open('洛神赋1', 'w')    #
 num = 0
 for line in file:
     num += 1
     # file.write('i like it' if num == 2 else '') # 不能完成 因为添加数据只能添加到文件的最后。
     line = ' '.join([line.strip(), 'i like it']) if num == 2 else line.strip()  # 取出文件1的内容
-    file1.write(''.join([line, '\n'])) # 一行行的写入到文件2中去
+    file1.write(''.join([line, '\n']))  # 一行行的写入到文件2中去
 file.close()
 file1.close()
+#  总结： 如果想要修改一个文件中的内容，这是不能完成修改的，必须将文件的原始内容进行处理后，重新写入到新的文件中去，或者是将原始文件进行覆盖掉。
 
 

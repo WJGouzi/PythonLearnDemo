@@ -29,6 +29,7 @@
 # 3.关闭文件->如果不进行操作的话，是不安全的-->
 
 ##### 读操作 ####
+# #1.创建文件操作的句柄
 # file = open('洛神赋','r')
 # #2.读
 # fileData = file.read(5)  # 取的是5个字符
@@ -59,13 +60,13 @@ file = open('洛神赋','r')
 # print(file.readlines()) # ['寥落古行宫，宫花寂寞红。\n', '白头宫女在，闲坐说玄宗。\n', '白日依山尽，黄河入海流。\n', '欲穷千里目，更上一层楼。']
 
 # 需求  将第2行加入一个字符串
-num = 0
+# num = 0
 # for line in file.readlines():
 #     num += 1
 #     # print(line.strip())   # strip会把每个字符串的换行符进行删除
 #     print(line.strip() + 'i like it' if num == 2 else line.strip())
 # file.close()
-
+print(''.join(['type is :', str(type(file))]))
 ####### 一般推荐使用的方法 **************************************************************
 # for line in file:  # 这是for内部将对象做成了一个迭代器，用一个去取一个。这里就是用一行就去取一行
 #     num += 1

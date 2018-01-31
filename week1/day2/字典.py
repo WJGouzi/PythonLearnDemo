@@ -32,7 +32,7 @@
 # 可变类型：列表、字典
 # 不可变类型：整型、字符串、元组
 
-dic1 = {'name':'wangjun', 'age':27, 'hobby':'girl', 'isHandsome':True}
+dic1 = {'name': 'wangjun', 'age': 27, 'hobby': 'girl', 'isHandsome': True}
 print(dic1)
 
 dic2 = dict((('name', 'wangjun'),)) # ',' 是必要的不然会报错

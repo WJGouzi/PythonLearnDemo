@@ -43,7 +43,7 @@ with open('../day3/洛神赋','r') as readfile, open('洛神赋', 'w') as wirtef
 
 import copy
 a = [[1, 2], 3, 4]
-b = a.deepcopy()
+b = copy.deepcopy(a)
 b[0][0] = 5
 print(a)
 print(b)
