@@ -120,4 +120,4 @@ def startCount(s):
     else:
         print('请核实您输入的内容，其中可能含有字母。。')
 
-startCount(s1)
+startCount(s)

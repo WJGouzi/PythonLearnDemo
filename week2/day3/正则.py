@@ -81,6 +81,8 @@ import re
 # print(re.findall('w?as', 'wangjunwwwwasdaswasasgjun'))  # ['was', 'as', 'was', 'as']
 # ? 就是匹配之前的'w',重复的次数是[0, 1], 然后将找到的所有的元素放在列表中
 print(re.findall('-?[\d\.]+[\*/]-?[\d\.]+', '34.543*-454.44'))
+# 需要注意的是 '?' 匹配的时候，是对'?'之前的字符进行匹配。
+print(re.findall('wa?-?d', '-wawa-ddswaddd'))
 
 # {} 贪婪匹配 重复匹配
 # print(re.findall('a{3}d','aaadsas'))  # ['aaad']
