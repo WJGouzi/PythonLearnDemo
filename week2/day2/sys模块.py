@@ -32,10 +32,10 @@ def post():
 
 def download():
     print('down load ok')
-# if sys.argv[1] == 'post':
-#     post()
-# elif sys.argv[1] == 'download':
-#     download()
+if sys.argv[1] == 'post':
+    post()
+elif sys.argv[1] == 'download':
+    download()
 #  在python解释器中(终端)输入 python3 sys模块.py post   或者    python3 sys模块.py download
 #  这里会返回['sys模块.py', 'post']   或者    ['sys模块.py', 'download']
 #  这里第一个参数是这个文件的路径，第二个参数是传入的参数

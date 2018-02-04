@@ -56,12 +56,10 @@ def checkBrackets(s):
 
 # 处理带负号的乘除
 def multiplicationAndDivisionMethod(s):
-    rr = re.compile(r'-?[\d\.]+[\*/]-?[\d\.]+')
-    while re.search(r'[\*/]', s):
+    rr = re.compile(r'-?[\d.]+[*/]-?[\d.]+')
+    while re.search(r'[*/]', s):
         searchString = re.search(rr, s).group()
-        # print(searchString)
-        searchLi = re.findall(r'(-?[\d\.]+|\*|/)', searchString)
-        # print(searchLi)
+        searchLi = re.findall(r'(-?[\d.]+|\*|/)', searchString)
         if searchLi[1] == '*':
             result = str(float(searchLi[0]) * float(searchLi[2]))
         else:
@@ -72,8 +70,7 @@ def multiplicationAndDivisionMethod(s):
 
 # 处理加减法，变成数组，全加
 def additionAndSubtractionMethod(s):
-    searchLi = re.findall(r'([\d\.]+|\+|-)', s)
-    print(searchLi)
+    searchLi = re.findall(r'([\d.]+|\+|-)', s)
     sumResult = 0
     for i in range(len(searchLi) - 1):
         print(searchLi[i])
@@ -120,4 +117,4 @@ def startCount(s):
     else:
         print('请核实您输入的内容，其中可能含有字母。。')
 
-startCount(s)
+startCount(s1)
