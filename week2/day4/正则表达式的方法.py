@@ -50,12 +50,20 @@ sb = re.sub('j..s', 'jxxb', 'wangjunssasd')      # **********
 print(sb)                              # wangjxxbsasd
 # 第一个的规则，第二个是需要替换成的内容，第三个是原始的字符串 -> 替换的内容是没有要求的
 
+sbn = re.subn('\d', 'aaa', 'asd2rfdsf4sdf')
+print(sbn)                             # 他将返回替换的次数 ('asdaaarfdsfaaasdf', 2)
+
 # 6.compile() 将正则表达式转换成一个正则表达式的对象
 re.findall('\.com', 'asda.comsad')
 cp = re.compile('\.com')               # 编译的规则 -> 转成了对象
 print(cp)                              #
 print(cp.findall('asda.comsad'))       # 直接用cp这个对象调用findall()方法，只用传入字符串参数就可以，因为是有了规则了 ['.com']
 print(cp.search('asda.comsad').group())
+
+# 7.finditer() 返回的结果是一个迭代器
+iterRet = re.finditer('\.com', 'asda.comsad')
+print(iterRet)                         # <callable_iterator object at 0x10629ce80>
+print(next(iterRet).group())           # .com
 
 
 

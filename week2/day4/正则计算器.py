@@ -53,7 +53,6 @@ def checkBrackets(s):
         return False
 
 
-
 # 处理带负号的乘除
 def multiplicationAndDivisionMethod(s):
     rr = re.compile(r'-?[\d.]+[*/]-?[\d.]+')
@@ -86,7 +85,6 @@ def additionAndSubtractionMethod(s):
             y = 0
         sumResult = sumResult + float(y)
     return str(sumResult)
-
 
 
 # 处理运算的逻辑

@@ -32,10 +32,12 @@ __create time__ = '2018/2/4'
 #     return x + y +2
 # print(add(1, 2))
 
-from programModule.calclute import calculate
-print(calculate.addCalculate(1, 3))
+from programModule import loggorPrint
 
+from programModule.calculate import calculateMethod
+print(calculateMethod.add(1, 3))
 
+print(loggorPrint.logging())
 
 
 # 搜索路径

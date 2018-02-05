@@ -58,11 +58,11 @@ import re
 
 
 # ^ 尖角符
-# print(re.findall('^h...o', 'hdaslheelo'))
+# print(re.findall('^h...o', 'hdasolheelo'))
 # 作用: 只从字符串的开始位置进行匹配
 
 # $ 美元符
-# print(re.findall('h...o$', 'hdaslheelo'))  # 'heelo']
+# print(re.findall('h...o$', 'hdaslheelo'))  # ['heelo']
 # 作用: 只从字符串的结束位置进行匹配
 
 
@@ -80,9 +80,9 @@ import re
 # ? [0, 1]  (推荐使用)
 # print(re.findall('w?as', 'wangjunwwwwasdaswasasgjun'))  # ['was', 'as', 'was', 'as']
 # ? 就是匹配之前的'w',重复的次数是[0, 1], 然后将找到的所有的元素放在列表中
-print(re.findall('-?[\d\.]+[\*/]-?[\d\.]+', '34.543*-454.44'))
-# 需要注意的是 '?' 匹配的时候，是对'?'之前的字符进行匹配。
-print(re.findall('wa?-?d', '-wawa-ddswaddd'))
+# print(re.findall('-?[\d\.]+[\*/]-?[\d\.]+', '34.543*-454.44'))
+# # 需要注意的是 '?' 匹配的时候，是对'?'之前的字符进行匹配。
+# print(re.findall('wa?-?d', '-wawaa-ddswaddd'))
 
 # {} 贪婪匹配 重复匹配
 # print(re.findall('a{3}d','aaadsas'))  # ['aaad']
@@ -103,7 +103,7 @@ print(re.findall('wa?-?d', '-wawa-ddswaddd'))
 ################################ [] | () \  ################################################################
 
 # [] : 字符集
-# print(re.findall('a[b,s]cd','abcd'))               # ['abcd']
+# print(re.findall('a[b,s]cd','abcd'))               # ['abcd']  注意的是这里的',' 也是一个字符(并不是分隔符的意思)-> 结论：'[]'中间是不需要分隔符的，
 # # 字符集中的字符只能是选一个进行匹配
 # print(re.findall('[a-z]', 'asda'))                 # ['a', 's', 'd', 'a']             '[a-z]' 表示的是a~z的所有字母的集合
 # # 还可以取消一些元字符的特殊功能的匹配
@@ -127,7 +127,7 @@ print(re.findall('wa?-?d', '-wawa-ddswaddd'))
 # \b 匹配的是与一个特殊字符的边界，也就是一个单词和特殊字符之间的位置
 
 # 普通变为特殊字符
-# print(re.findall('\d{11}', 'asd1598292552715982925527asfsg'))      # ['15982925527', '15982925527']
+# print(re.findall('\d{11}', 'asd15911115527ss15981111127asfsg'))      # ['15982925527', '15982925527']
 # # 以上的例子说明的是当匹配成功一个后，下次匹配会从上次成功处接着进行匹配
 # print(re.findall('\s', 'asd1s25527 asfsg'))                        # [' ']
 # print(re.findall('\w', 'as27 asfsg'))                              # ['a', 's', '2', '7', 'a', 's', 'f', 's', 'g']
@@ -151,8 +151,6 @@ print(re.findall('wa?-?d', '-wawa-ddswaddd'))
 
 
 
-
-
 # () 分组的
 # print(re.findall('(as)+', 'sasdfsfsas'))     # ['as', 'as']
 # ret1 = re.search('(as)+', 'sasdfsfsas')      # as
@@ -163,10 +161,23 @@ print(re.findall('wa?-?d', '-wawa-ddswaddd'))
 
 
 ### 经常使用的 #######
-gr = re.search('(?P<id>\d{3}):(?P<port>\w{3})', '192.168.2.215:222')
-print(gr.group())               # 215:222
-print(gr.group('id'))           # 215
-print(gr.group('port'))         # 222
-# 以上的  ?P<xxx> 是固定格式 也就是给这个组起一个名字叫xxx， 正则匹配起作用的只是  \d{3} 和 \w{3}
-gr1 = re.findall('(?P<id>\d{3}):(?P<port>\w{3})', '192.168.2.215:222')
-print(gr1)                      # [('215', '222')]
+# gr = re.search('(?P<id>\d{3}):(?P<port>\w{3})', '192.168.2.215:222')
+# print(gr.group())               # 215:222
+# print(gr.group('id'))           # 215
+# print(gr.group('port'))         # 222
+# # 以上的  ?P<xxx> 是固定格式 也就是给这个组起一个名字叫xxx， 正则匹配起作用的只是  \d{3} 和 \w{3}
+# gr1 = re.findall('(?P<id>\d{3}):(?P<port>\w{3})', '192.168.2.215:222')
+# print(gr1)                      # [('215', '222')]
+
+# 关于findall()需要注意点
+# print(re.findall('www.(\w+).com', 'www.baidu.com'))   # ['baidu']
+# 注意
+# findall函数，处理的时候是将匹配的结果放在一个组里面的，方便以后按组去取数据。因为组的权限比较高，所以默认返回的值的按组匹配的结果，也就是['baidu']。
+# 如果非得要进行全部匹配的话，那就需要取消组的权限，使得返回一个整体的值
+# 取消权限
+# print(re.findall('www.(?:\w+).com', 'www.bilibili.com'))  # ['www.bilibili.com']
+
+
+# print(re.search('abc+', 'abcccdcccabcccc').group())  #
+
+print(re.findall('\+|-', '123+33-4'))
