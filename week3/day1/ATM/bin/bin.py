@@ -29,7 +29,6 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 # 找到本文件的相对路径后，将ATM这个绝对路径添加到系统中，使得python解释器能找到这个模块
 
-
 from module import main
 
 main.main()

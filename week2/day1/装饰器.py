@@ -76,7 +76,7 @@ addFunc(1, 3, 4, 5)
 
 #  装饰器函数加参数 -> 就相当于是给装饰器再次嵌套
 def showTimeWithLog(text='false'):
-    print(text)
+    print('text is ' + text)
     def showTimeFunc(f):
         def inner(*x, **y):
             start = time.time()
