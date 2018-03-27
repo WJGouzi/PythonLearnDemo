@@ -1,0 +1,35 @@
+1.Python：可以进行函数式编程和面向对象编程
+2.函数式可以完成任何的事情
+
+def foo(name, text):
+    print(name, text)
+调用
+foo(name1, text1)
+
+
+面向对象
+
+class bar:
+    def foo(self, name, text):
+        print(name, text)
+
+obj = bar()
+obj.foo(name2, text2)
+
+
+1、定义：
+    函数:
+        def + 函数名 + (参数)
+
+    面向对象:
+        class -> 类
+        def + 方法名 + (self + 参数)
+        方法中的第一个参数必须是self
+2、执行
+    函数:
+        函数名(参数)
+    面向对象:
+        创建对象 obj = 类()
+        访问方法 obj.方法名(参数名)
+
+self代指的是调用的对象(实例)
