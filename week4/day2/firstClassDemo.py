@@ -43,3 +43,21 @@ print('return %d' % age)
 obj.gender = 'male'
 p = obj.poo('hah')
 print(p)
+
+
+class secondClass:
+    def __init__(self, name, age):
+        '''
+        这里是初始化相关的内容
+        :param name: 这里的name可以进行初始化
+        :param age: 这里的age可以进行初始化
+        '''
+        self.name = name    # -> 这里就相当于是s.name = 'ssss'
+        self.age = age      # -> 这里就相当于是s.age = 12
+        self.blood = 'o'    # -> 这里相当于是默认的参数(所有的类都是有的。)
+    def foo(self):
+        print(self.name, self.age, self.blood)
+
+s = secondClass('wj', 12)
+print(s.foo())
+
