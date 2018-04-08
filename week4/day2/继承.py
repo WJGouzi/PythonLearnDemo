@@ -33,13 +33,18 @@ class Father:           # 父类(基类)
 class Son(Father):      # 子类(派生类)
     def xxoo(self):
         print('xxoo')
-    def smoke(self):
+    def smoke(self):    # 重写父类中的方法, self永远指代的是自己,并不是指代的父类或者爷爷类
         print('smoke is not good')
 
+    def makeHairSon(self):
+        print('sas')
+        # 调用父类中的方法
+        super(Son, self).makeHair()   # 方法1：这是在自己的方法中执行继承父类的方法(推荐使用)(super是固定写法)
+        Father.smoke(self)            # 方法2：这也是执行父类中方法
 
 s = Son()
 
 print(s.drink())
 print(s.smoke())
 print(s.makeHair())
-
+print(s.makeHairSon())
