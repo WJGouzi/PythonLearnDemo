@@ -41,7 +41,7 @@ showInfo(age=16, name='wangjun')
 #  如果有关键字传入的时候，位置就不重要了，只要对应传入的参数类型匹配就可以了。
 
 # 默认参数
-def showStudentInfo(name, age, gender='boy'):
+def showStudentInfo(name, age, gender='boy'):             # 默认参数最好不要是可变的参数(大坑)
     # 默认参数一定要放在参数的后面
     print('%s is %d years old %s' % (name, age, gender))
 
@@ -64,10 +64,11 @@ add(1,4,5)  # 10
 
 
 # 例子2 -> 将参数转为字典
-def func(name, age, gender = 'boy', *args, **kwargs):
+def func(name, age, gender='boy', *args, **kwargs):
     print('%s is %d years old %s -- %s  :  %s' % (name, age, gender, args, kwargs))
+    print('%{name} is %{age} is years old %{gender} -- %{args}  :  %{kwargs}' % (name, age, gender, args, kwargs))  # 推荐使用的占位符的方式
 
-func('wangjun', 26, 'boy', 12345,33, job = 'IT', hobbit = 'girls')
+func('wangjun', 26, 'boy', 12345, 33, job='IT', hobbit='girls')
 
 # 参数位置的顺序：
 #   关键字参数 -> 默认参数 -> 可变参数
