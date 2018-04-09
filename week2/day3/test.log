@@ -1,0 +1,16 @@
+2018-01-31 11:31:29,800 logging_logger.py[line:49] WARNING logger warning message
+2018-01-31 11:31:29,800 logging_logger.py[line:50] ERROR logger error message
+2018-01-31 11:31:29,800 logging_logger.py[line:51] CRITICAL logger critical message
+2018-01-31 11:35:17,080 logging_logger.py[line:50] WARNING logger warning message
+2018-01-31 11:35:17,080 logging_logger.py[line:51] ERROR logger error message
+2018-01-31 11:35:17,081 logging_logger.py[line:52] CRITICAL logger critical message
+2018-01-31 11:39:39,068 logging_logger.py[line:48] DEBUG logger debug message
+2018-01-31 11:39:39,068 logging_logger.py[line:49] INFO logger info message
+2018-01-31 11:39:39,068 logging_logger.py[line:50] WARNING logger warning message
+2018-01-31 11:39:39,068 logging_logger.py[line:51] ERROR logger error message
+2018-01-31 11:39:39,068 logging_logger.py[line:52] CRITICAL logger critical message
+2018-01-31 14:09:49,197 logging_logger.py[line:48] DEBUG logger debug message
+2018-01-31 14:09:49,197 logging_logger.py[line:49] INFO logger info message
+2018-01-31 14:09:49,198 logging_logger.py[line:50] WARNING logger warning message
+2018-01-31 14:09:49,198 logging_logger.py[line:51] ERROR logger error message
+2018-01-31 14:09:49,198 logging_logger.py[line:52] CRITICAL logger critical message
