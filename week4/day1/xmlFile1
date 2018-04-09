@@ -1,0 +1,22 @@
+<data>
+    <country name="china">
+        <rank update="yes">69</rank>
+        <year changed="yes">2012</year>
+        <gdppc>12444</gdppc>
+        <neighbor direction="N" name="mengoliria" />
+        <neighbor direction="S" name="thiland" />
+    </country>
+    <country name="Panama">
+        <rank update="yes">22</rank>
+        <year changed="yes">2014</year>
+        <gdppc>124445</gdppc>
+        <neighbor direction="N" name="costa rica" />
+        <neighbor direction="S" name="colombia" />
+    </country>
+    <country name="singapore">
+        <rank update="yes">6</rank>
+        <year changed="yes">2002</year>
+        <gdppc>435655</gdppc>
+        <neighbor direction="N" name="malysia" />
+    </country>
+</data>

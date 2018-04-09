@@ -45,6 +45,10 @@ class Foo:
         print(cls)
         print('class method')
 
+
+
+
+
 obj = Foo()
 obj.bar()
 # Foo.bar(obj)  # 一般不使用
