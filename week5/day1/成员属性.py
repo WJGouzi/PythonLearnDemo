@@ -51,7 +51,7 @@ class Foo:
     def f3(self):
         print('delete')
 
-    perr2 = property(fget=f1, fset=f2, fdel=f3)
+    perr2 = property(fget=f1, fset=f2, fdel=f3, doc='这个是注释')
 
 # 第一种成员属性的调用方式
 f = Foo()
