@@ -22,6 +22,7 @@ __create time__ = '2018/4/9'
 
 class Foo:
 
+    # 第一种成员属性的写法
     @property               # 添加一个装饰器，就相当于是getter方法
     def per(self):
         print('per')
@@ -37,9 +38,37 @@ class Foo:
         print('delete method')
 
 
+    # 成员属性另一种写法(getter方法)
+    def f1(self):
+        return 123
+    perr = property(fget=f1)  # 等同于上面加上@property装饰器的写法
+
+    def f2(self, value):
+        print(value)
+        # return value
+    perr1 = property(fset=f2)
+
+    def f3(self):
+        print('delete')
+
+    perr2 = property(fget=f1, fset=f2, fdel=f3)
+
+# 第一种成员属性的调用方式
 f = Foo()
 p = f.per
 print(p)
 p = 11
 print(p)
 del f.per
+
+
+# 另一种成员属性的调用方式
+fo = Foo()
+pr = fo.perr
+print(pr)
+pr = 212
+print(pr)
+print(fo.perr2)
+fo.perr2 = 12112
+del fo.perr2
+
