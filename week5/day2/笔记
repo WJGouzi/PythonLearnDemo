@@ -4,7 +4,10 @@
             -> 如果有继承的关系，子类是不能继承父类中的私有成员
 
 2.特殊成员
-
+    __init__(self):                         类()自动执行
+    __call__(self, *args, **kwargs):        对象()  类()() 自动执行
+    __int__(self):                          int(对象)
+    __str__(self):                          str(对象)
 3.metaclass 原始类
 
 4.异常处理
