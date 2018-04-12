@@ -49,16 +49,6 @@ class Foo(object, metaclass=myTpye):                        # 不去由type创�
         return object.__new__(cls, *args, **kwargs)
 
 
-    def __call__(self, *args, **kwargs):
-        print('执行的是Foo的__call__方法')
-        return self.__init__(self.__new__(self, *args, **kwargs))
-
-
-    def bar(self, *args, **kwargs):
-        self.__call__(self, *args, **kwargs)
-        print(12343)
-
-
 ####################
 
 # def bar1(self):
@@ -66,9 +56,10 @@ class Foo(object, metaclass=myTpye):                        # 不去由type创�
 
 # Boo = type('Boo', (object,), {'func': bar1})                # 申明了一个类
 # Boo1 = type('Boo1', (object,), {'func': lambda x: 33})      # Boo和Boo1同样是对象，是type的对象
+# 以上的几种方式都是创建类的形式(还是采用第一种创建类的形式)
+
 
 f = Foo()                                                     # 首先执行的是myType的__init__，然后执行__call__方法
-f.bar()
+
 
 # b = Boo1()
-# b.bar1()
