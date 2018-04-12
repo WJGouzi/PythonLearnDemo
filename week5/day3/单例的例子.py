@@ -31,8 +31,8 @@ class mainHandler(tornado.web.RequestHandler):
 
     def get(self, *args, **kwargs):
         import time
-        self.write('现在的时间戳为:'+ str(time.time()))
-
+        self.write('现在的时间戳为: ' + str(time.time()))
+        self.write('haha')
 
 application = tornado.web.Application([(r"/index", mainHandler)])
 
