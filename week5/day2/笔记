@@ -29,9 +29,16 @@
 
 
 3.metaclass 原始类
+    万物皆对象
 
-4.异常处理
+    class Foo:
+        pass
 
-5.反射
+    obj = Foo()
+    obj是对象，Foo类的对象
+    Foo也是对象，是type类的对象
 
-6.单例模式
+
+    所有的类都是type的对象， type(....)
+    "对象"都是以类的对象     类()
+
