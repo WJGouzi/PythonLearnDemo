@@ -5,3 +5,44 @@
 
 网络通讯步骤:
     确定对端IP地址 -> 确定应用程序端口 -> 确定通讯协议
+
+
+
+socket就是一套套接字,并不是协议
+
+    server端
+        (
+            <
+                socket.socket fd=5,
+                family=AddressFamily.AF_INET,
+                type=SocketKind.SOCK_STREAM,
+                proto=0,
+                laddr=('127.0.0.1', 8800),
+                raddr=('127.0.0.1', 51463)
+            >,
+            ('127.0.0.1', 51463)
+        )
+    client端
+        <
+            socket.socket fd=4,
+            family=AddressFamily.AF_INET,
+            type=SocketKind.SOCK_STREAM,
+            proto=0,
+            laddr=('127.0.0.1', 51463),
+            raddr=('127.0.0.1', 8800)
+        >
+    # 这两个sk没有任何的关系
+
+    server端的方法
+        bind()
+        listen()
+        accept()
+        recv()
+        send()
+        sendall()
+
+    client端的方法
+        connect()
+        recv()
+        send()
+        sendall()
